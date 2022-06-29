@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      VERSION_SUFFIX: "alpha.${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}"
+      VERSION_SUFFIX: alpha.$GITHUB_SHA-$GITHUB_RUN_ATTEMPT
       CONFIGURATION: Release
 
     steps:
