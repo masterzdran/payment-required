@@ -20,8 +20,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build PaymentRequiredSolution.sln --no-restore --configuration Release
+      run: dotnet build PaymentRequiredSolution.sln --configuration Release
     - name: Pack
-      run: dotnet pack PaymentRequiredSolution.sln --no-restore --configuration Release --output dist/
-    - name: Publish nuget.org
-      run: dotnet nuget push dist/PaymentRequired.*.nupkg --skip-duplicate --no-symbols true --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
+      run: 
+        rm dist/*
+        dotnet pack PaymentRequiredSolution.sln --configuration Release --output dist/
+    # - name: Publish nuget.org
+    #   run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
