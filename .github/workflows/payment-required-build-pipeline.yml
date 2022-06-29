@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build PaymentRequiredSolution.sln --no-restore --configuration Release
     - name: Pack
-      run: dotnet pack PaymentRequiredSolution.sln --no-restore --configuration Release
+      run: dotnet pack PaymentRequiredSolution.sln --no-restore --configuration Release --output dist/
