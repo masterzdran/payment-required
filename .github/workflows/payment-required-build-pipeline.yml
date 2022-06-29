@@ -5,7 +5,8 @@ on:
     branches: [ feature/paymente-required ]
   pull_request:
     branches: [ feature/paymente-required ]
-
+env: 
+  VERSION_SUFFIX: ${{ github.sha }}-${{ github.run_attempt }}
 jobs:
   build:
 
@@ -30,8 +31,7 @@ jobs:
           echo ${GITHUB_RUN_ATTEMPT}
         
     - name: Pack
-      env: 
-        VERSION_SUFFIX: ${{GITHUB_SHA}}-${{GITHUB_RUN_ATTEMPT}}
+     
       run: | 
         rm -rf dist/*.nupkg
         dotnet pack  --configuration $CONFIGURATION --output dist/ --version-suffix "alpha.$VERSION_SUFFIX"
