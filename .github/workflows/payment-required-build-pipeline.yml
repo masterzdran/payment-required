@@ -22,8 +22,7 @@ jobs:
     - name: Build
       run: dotnet build PaymentRequiredSolution.sln --configuration Release
     - name: Pack
-      run: 
-        rm dist/*
-        dotnet pack PaymentRequiredSolution.sln --configuration Release --output dist/
+      run: rm -rf dist/*.nupkg
+      run: dotnet pack PaymentRequiredSolution.sln --configuration Release --output dist/
     # - name: Publish nuget.org
     #   run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
