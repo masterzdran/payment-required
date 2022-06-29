@@ -31,7 +31,7 @@ jobs:
         
     - name: Pack
       env: 
-        VERSION_SUFFIX: ${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}
+        VERSION_SUFFIX: ${{GITHUB_SHA}}-${{GITHUB_RUN_ATTEMPT}}
       run: | 
         rm -rf dist/*.nupkg
         dotnet pack  --configuration $CONFIGURATION --output dist/ --version-suffix "alpha.$VERSION_SUFFIX"
