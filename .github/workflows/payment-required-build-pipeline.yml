@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      VERSION_SUFFIX: "alpha.$GITHUB_SHA-$GITHUB_RUN_ATTEMPT"
+      VERSION_SUFFIX: "alpha.${GITHUB_SHA}-${GITHUB_RUN_ATTEMPT}"
       CONFIGURATION: Release
 
     steps:
@@ -24,6 +24,12 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build PaymentRequiredSolution.sln --configuration $CONFIGURATION
+    
+    - name: Echos
+      run: |
+          echo ${GITHUB_SHA}
+          echo ${GITHUB_RUN_ATTEMPT}
+        
     - name: Pack
       run: | 
         rm -rf dist/*.nupkg
