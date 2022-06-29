@@ -10,6 +10,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      VERSION_SUFFIX: alpha.$GITHUB_SHA-$GITHUB_RUN_ATTEMPT
+      CONFIGURATION: Release
 
     steps:
     - uses: actions/checkout@v2
@@ -20,11 +23,11 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build PaymentRequiredSolution.sln --configuration Release
+      run: dotnet build PaymentRequiredSolution.sln --configuration $CONFIGURATION
     - name: Pack
       run: | 
         rm -rf dist/*.nupkg
-        dotnet pack  --configuration Release --output dist/ --version-suffix "alpha.$env:GITHUB_SHA-$env:GITHUB_RUN_ATTEMPT"
+        dotnet pack  --configuration $CONFIGURATION --output dist/ --version-suffix "$VERSION_SUFFIX"
         ls dist/*.nupkg
     # - name: Publish nuget.org
     #   run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
