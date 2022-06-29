@@ -23,3 +23,5 @@ jobs:
       run: dotnet build PaymentRequiredSolution.sln --no-restore --configuration Release
     - name: Pack
       run: dotnet pack PaymentRequiredSolution.sln --no-restore --configuration Release --output dist/
+    - name: Publish nuget.org
+      run: dotnet nuget push dist/PaymentRequired.*.nupkg --skip-duplicate --no-symbols true --api-key ${{NUGET_ORG}}
