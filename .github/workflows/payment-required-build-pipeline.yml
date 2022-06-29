@@ -2,9 +2,9 @@ name: Payment Required Build Pipeline
 
 on:
   push:
-    branches: [ feature/paymente-required ]
+    branches: [ prerelease ]
   pull_request:
-    branches: [ feature/paymente-required ]
+    branches: [ prerelease ]
 env: 
   VERSION_SUFFIX: ${{ github.sha }}-${{ github.run_attempt }}
 jobs:
@@ -24,14 +24,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build PaymentRequiredSolution.sln --configuration $CONFIGURATION
-    
-    - name: Echos
-      run: |
-          echo ${GITHUB_SHA}
-          echo ${GITHUB_RUN_ATTEMPT}
-        
+       
     - name: Pack
-     
       run: | 
         rm -rf dist/*.nupkg
         dotnet pack  --configuration $CONFIGURATION --output dist/ --version-suffix "alpha.$VERSION_SUFFIX"
