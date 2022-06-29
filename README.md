@@ -10,7 +10,7 @@ The response of the API will be either the result of the service if everything i
 
 # Configuration
 
-## 1- Create an object that implements IPaymentRequiredValidator
+## 1- Create an class that implements IPaymentRequiredValidator
 
 ```csharp
 public sealed class NoPaymentIsRequiredValidator : IPaymentRequiredValidator
