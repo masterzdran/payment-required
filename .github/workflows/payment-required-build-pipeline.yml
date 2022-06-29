@@ -32,7 +32,7 @@ jobs:
         ls dist/*.nupkg
     - name: Push Artifacts
       uses: actions/upload-artifact@v2
-      with:
-        	path: "./dist"
+      with:        
+        path: "./dist"
     # - name: Publish nuget.org
     #   run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
