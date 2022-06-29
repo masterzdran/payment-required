@@ -24,7 +24,7 @@ jobs:
     - name: Pack
       run: | 
         rm -rf dist/*.nupkg
-        dotnet pack  --configuration Release --output dist/ --version-suffix "alpha.${env:GITHUB_SHA}-${env:GITHUB_RUN_ATTEMPT}"
+        dotnet pack  --configuration Release --output dist/ --version-suffix "alpha.$env:GITHUB_SHA-$env:GITHUB_RUN_ATTEMPT"
         ls dist/*.nupkg
     # - name: Publish nuget.org
     #   run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json
