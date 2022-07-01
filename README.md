@@ -59,4 +59,3 @@ Add **PaymentRequiredMiddleware** into the pipeline, between UseAuthentication a
 # Attribution
 
 Payment method icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/payment-method)
-Payment method icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/payment-method)
