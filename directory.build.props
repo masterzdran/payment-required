@@ -6,6 +6,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/masterzdran/payment-required</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/masterzdran/payment-required</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryBranch>main</RepositoryBranch>
         <Title>PaymentRequirement</Title>
