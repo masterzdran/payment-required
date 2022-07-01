@@ -1,0 +1,45 @@
+name: Payment Required Build Pipeline
+
+on:
+  push:
+    branches: [ disabled ]
+  pull_request:
+    branches: [ disabled ]
+
+env: 
+  VERSION_SUFFIX: ${{ github.sha }}-${{ github.run_attempt }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:      
+      CONFIGURATION: Release
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: |
+        ls 
+        echo "------------------------------------------------------------------"
+        dotnet restore PaymentRequiredSolution.sln
+    - name: Build
+      run: dotnet build PaymentRequiredSolution.sln --configuration $CONFIGURATION
+       
+    - name: Pack
+      run: | 
+        rm -rf dist/*.nupkg
+        dotnet pack PaymentRequiredSolution.sln --configuration $CONFIGURATION --output dist/ --version-suffix "alpha.$VERSION_SUFFIX"
+        ls dist/*.nupkg
+    
+    - name: Push Artifacts
+      uses: actions/upload-artifact@v2
+      with:        
+        path: "./dist"
+    
+    - name: Publish nuget.org
+      run: dotnet nuget push dist/PaymentRequired.*.nupkg --api-key ${{secrets.NUGET_ORG}} --source https://api.nuget.org/v3/index.json

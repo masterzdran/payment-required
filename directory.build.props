@@ -1,0 +1,21 @@
+<Project>
+	<PropertyGroup>        
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<Authors>Nuno Cancelo</Authors>
+        <PackageIcon>icon.64.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/masterzdran/payment-required</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryBranch>main</RepositoryBranch>
+        <Title>PaymentRequirement</Title>
+        <Description>A library that add a middleware to validate if a payment is due, to use SaaS service.</Description>
+        <PackageTags>Payment Required</PackageTags>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="../../../icon.64.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	  <ItemGroup>
+    <None Include="../../../readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+</Project>

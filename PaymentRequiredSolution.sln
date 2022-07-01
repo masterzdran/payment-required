@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B6F16A79-B312-4908-81FE-FF66400BB447}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0E24F690-BA5B-4482-B98C-E47CAA7050F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E68CE98E-422C-45D6-BCF9-6C41334B7043}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		CHANGELOG.md = CHANGELOG.md
+		directory.build.props = directory.build.props
+		global.json = global.json
+		icon.64.png = icon.64.png
+		nuget.config = nuget.config
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{0685E6A1-E7BA-4F59-80B4-A76352E75966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{4656CA3A-1BCE-49BF-8CDA-A2408CB8DAAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentRequired", "src\Library\PaymentRequired\PaymentRequired.csproj", "{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentRequiredAPI", "src\WebAPI\PaymentRequiredAPI\PaymentRequiredAPI.csproj", "{A12B6600-F5D7-498D-8E86-8EE2254604FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12B6600-F5D7-498D-8E86-8EE2254604FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12B6600-F5D7-498D-8E86-8EE2254604FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12B6600-F5D7-498D-8E86-8EE2254604FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12B6600-F5D7-498D-8E86-8EE2254604FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0685E6A1-E7BA-4F59-80B4-A76352E75966} = {B6F16A79-B312-4908-81FE-FF66400BB447}
+		{4656CA3A-1BCE-49BF-8CDA-A2408CB8DAAC} = {B6F16A79-B312-4908-81FE-FF66400BB447}
+		{9A89461E-08CD-45E5-ABA4-AF98FFE64DDA} = {0685E6A1-E7BA-4F59-80B4-A76352E75966}
+		{A12B6600-F5D7-498D-8E86-8EE2254604FD} = {4656CA3A-1BCE-49BF-8CDA-A2408CB8DAAC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64AE18E3-3AD6-4C0B-9FF3-28BFF684D28F}
+	EndGlobalSection
+EndGlobal
