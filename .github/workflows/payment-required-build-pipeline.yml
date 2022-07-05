@@ -2,9 +2,9 @@ name: Payment Required Build Pipeline
 
 on:
   push:
-    branches: [ disabled ]
+    branches: [ main ]
   pull_request:
-    branches: [ disabled ]
+    branches: [ main ]
 
 env: 
   VERSION_SUFFIX: ${{ github.sha }}-${{ github.run_attempt }}
