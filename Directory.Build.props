@@ -4,7 +4,7 @@
 		<Authors>Nuno Cancelo</Authors>
         <PackageIcon>icon.64.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/masterzdran/payment-required</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/masterzdran/payment-required</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>

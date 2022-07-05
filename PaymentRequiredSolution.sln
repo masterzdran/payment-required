@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		CHANGELOG.md = CHANGELOG.md
-		global.json = global.json
 		Directory.Build.props = Directory.Build.props
+		global.json = global.json
 		icon.64.png = icon.64.png
 		nuget.config = nuget.config
-		readme.md = readme.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{0685E6A1-E7BA-4F59-80B4-A76352E75966}"
