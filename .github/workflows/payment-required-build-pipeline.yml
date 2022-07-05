@@ -2,7 +2,7 @@ name: Payment Required Build Pipeline
 
 on:
   push:
-    branches: [ disabled ]
+    branches: [ main ]
   pull_request:
     branches: [ disabled ]
 
