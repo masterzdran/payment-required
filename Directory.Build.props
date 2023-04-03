@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>        
-		<VersionPrefix>1.0.1</VersionPrefix>
+		<VersionPrefix>1.0.2</VersionPrefix>
 		<Authors>Nuno Cancelo</Authors>
         <PackageIcon>icon.64.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
