@@ -14,8 +14,8 @@ namespace PaymentRequired.Models
             this.DetailedReason = string.Empty;
             this.IsPaymentRequired = true;
         }
-        public bool IsPaymentRequired { get; internal set; }
-        public string DetailedReason { get; internal set; }
-        public string TitleReason { get; internal set; }
+        public bool IsPaymentRequired { get; set; }
+        public string DetailedReason { get; set; }
+        public string TitleReason { get; set; }
     }
 }
