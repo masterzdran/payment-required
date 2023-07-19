@@ -42,4 +42,4 @@ jobs:
         path: "./dist"
     
     - name: publish nuget.org
-      run: dotnet nuget push dist/paymentrequired.*.nupkg --api-key ${{secrets.nuget_org}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push dist/paymentrequired.*.nupkg  --api-key ${{secrets.NUGET_ORG_TOKEN}} --source https://api.nuget.org/v3/index.json
