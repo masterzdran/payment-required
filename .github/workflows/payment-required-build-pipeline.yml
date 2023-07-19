@@ -8,6 +8,7 @@ on:
 
 env: 
   VERSION_SUFFIX: ${{ github.sha }}-${{ github.run_attempt }}
+  CONFIGURATION: 'Release'
 
 jobs:
   build:
@@ -15,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     env:      
       CONFIGURATION: Release
-
+    environment:
+      name: NUGET_ORG
+      url: 'https://www.nuget.org/profiles/masterzdran'
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -33,7 +36,7 @@ jobs:
     - name: Pack
       run: | 
         rm -rf dist/*.nupkg
-        dotnet pack PaymentRequiredSolution.sln --configuration $CONFIGURATION --output dist/ --version-suffix "alpha.$VERSION_SUFFIX"
+        dotnet pack  --output ./dist/
         ls dist/*.nupkg
     
     - name: Push Artifacts
@@ -42,5 +45,5 @@ jobs:
         path: "./dist"
     
     - name: publish nuget.org
-      run: dotnet nuget push dist/paymentrequired.*.nupkg  --api-key ${{secrets.NUGET_ORG_TOKEN}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push dist/paymentrequired.*.nupkg --api-key ${{secrets.NUGET_ORG_TOKEN}} --source https://api.nuget.org/v3/index.json
       
