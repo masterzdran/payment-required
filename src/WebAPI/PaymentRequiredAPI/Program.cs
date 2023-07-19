@@ -1,6 +1,6 @@
-using PaymentRequired.Contracts;
+﻿using PaymentRequired.Contracts;
 using PaymentRequired.Middlewares;
-using PaymentRequired.Models;
+using PaymentRequiredAPI.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +12,7 @@ builder.Services.AddLogging(
         config.AddDebug();
     }
     );
-builder.Services.AddScoped<IPaymentRequiredValidator, NoPaymentIsRequiredValidator>();
+builder.Services.AddSingleton<IPaymentRequiredValidator, DemoPaymentRequiredValidator>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

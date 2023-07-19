@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using PaymentRequired.Contracts;
 using PaymentRequired.Models;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace PaymentRequired.Middlewares
 {
@@ -12,8 +11,8 @@ namespace PaymentRequired.Middlewares
         private readonly RequestDelegate _next;
         private readonly IPaymentRequiredValidator _validator;
         private readonly ILogger _logger;
-        
-        public PaymentRequiredMiddleware(ILogger<PaymentRequiredMiddleware> logger, IPaymentRequiredValidator paymentRequiredValidator,RequestDelegate next)
+
+        public PaymentRequiredMiddleware(ILogger<PaymentRequiredMiddleware> logger, IPaymentRequiredValidator paymentRequiredValidator, RequestDelegate next)
         {
             this._logger = logger;
             this._next = next;
@@ -24,7 +23,7 @@ namespace PaymentRequired.Middlewares
         {
             PaymentRequiredResponse paymentRequired = _validator.ValidatePaymentRequired(context);
 
-            
+
             if (paymentRequired.IsPaymentRequired)
             {
                 string instance = context.Request.Path;
@@ -35,7 +34,7 @@ namespace PaymentRequired.Middlewares
                     Instance = instance
                 };
                 int status = problemDetails.Status.GetValueOrDefault();
-                var body = JsonSerializer.Serialize(problemDetails);
+                var body = JsonConvert.SerializeObject(problemDetails);
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = status;
                 await context.Response.WriteAsync(body);
@@ -43,7 +42,7 @@ namespace PaymentRequired.Middlewares
             }
             await _next(context);
             return;
-            
+
         }
     }
 }

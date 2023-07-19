@@ -1,8 +1,8 @@
 ﻿namespace PaymentRequired.Models
 {
-    internal sealed class NoPaymentIsRequiredResponseNullObject : PaymentRequiredResponse
+    public sealed class NoPaymentIsRequiredResponseNullObject : PaymentRequiredResponse
     {
-        public NoPaymentIsRequiredResponseNullObject() :base()
+        public NoPaymentIsRequiredResponseNullObject() : base()
         {
             this.IsPaymentRequired = false;
             this.TitleReason = string.Empty;
